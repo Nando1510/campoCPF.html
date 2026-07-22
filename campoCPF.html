@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cadastro de Usuário - Encontre Esperança</title>
+  <link rel="stylesheet" href="usuario_Cadastro.css">
+</head>
+<body>
+  <div class="fundo">
+    <div class="cadastro-container">
+      <h1>Cadastre-se</h1>
+      <p>Crie sua conta para continuar</p>
+      <form id="form-cadastro">
+        <label for="usuario">Usuário:</label>
+        <input type="text" id="usuario" name="usuario" required>
+        
+        
+
+        <!-- CAMPO CPF ->  maxlength="11" QUE PERMITE NO MÁXIMO 11 CARACTERES -->
+        <label for="cpf">CPF:</label>
+        <input type="password" id="cpf" name="cpf" maxlength="11" required>
+        
+        <!-- CAMPO confirmaCPF ->  maxlength="11" QUE PERMITE NO MÁXIMO 11 CARACTERES -->
+        <label for="confirmaCpf">Confirmar CPF:</label>
+        <input type="password" id="confirmaCpf" name="confirmaCpf" maxlength="11" required>
+        
+        
+        
+
+        <button type="submit">Cadastrar</button>
+        <br><br>
+        <button type="button" onclick="window.location.href='//localhost:3000/usuario_Login/usuario_Login.html'">Voltar</button>
+      </form>
+    </div>
+  </div>
+  <script>
+
+    //CÓDIGO QUE REMOVE LETRAS DO CAMPO CPF
+    const cpf = document.getElementById('cpf');
+
+        cpf.addEventListener('input', function () {
+          // Remove tudo que não for número
+         this.value = this.value.replace(/\D/g, '');
+        });
+
+
+    //CÓDIGO QUE REMOVE LETRAS DO CAMPO confirmaCpf
+    const confirma_Cpf = document.getElementById('confirmaCpf');
+
+        confirma_Cpf.addEventListener('input', function () {
+          // Remove tudo que não for número
+         this.value = this.value.replace(/\D/g, '');
+        });  
+
+  </script>
+
+  <script src="usuario_Cadastro.js" defer></script>
+
+  
+</body>
+</html>
